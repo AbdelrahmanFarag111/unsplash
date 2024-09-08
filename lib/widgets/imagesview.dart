@@ -22,9 +22,9 @@ class _ImagesViewState extends State<ImagesView> {
   bool isLiked = false;
 
   @override
-  void initState() async{
+  void initState(){
     check();
-    await FlutterDownloader.registerCallback(ImageDownloadCallback.callback as DownloadCallback);
+    FlutterDownloader.registerCallback(ImageDownloadCallback.callback as DownloadCallback);
     super.initState();
   }
 
@@ -243,7 +243,7 @@ class _ImagesViewState extends State<ImagesView> {
 }
 
 class ImageDownloadCallback {
-  static void callback(String id, DownloadTaskStatus status, int progress) {
+  static void callback(dynamic id, dynamic status, int progress) {
     if (kDebugMode) {
       print(progress);
     }

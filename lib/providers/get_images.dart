@@ -13,7 +13,7 @@ class GetImages {
   }
 
   Future<List<ImageModel>> getCollectionImages(
-      String id, int page, int perPage) async {
+      dynamic id, int page, int perPage) async {
     String apiKey = await getKey();
     final response = await http.get(Uri.parse(
         'https://api.unsplash.com/collections/$id/photos?client_id=$apiKey&page=$page&per_page=$perPage'));

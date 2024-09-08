@@ -42,8 +42,8 @@ class PhotosView extends StatelessWidget {
         itemCount: images.length,
         itemBuilder: (BuildContext context, index) {
           return GestureDetector(
-            onTap: () {
-              Navigator.push(
+            onTap: () async {
+              await Navigator.push(
                   context,
                   MaterialPageRoute(
                       builder: (context) => ImagesView(images: images[index])));
